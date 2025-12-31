@@ -26,6 +26,3 @@ install(TARGETS wav-file-analyzer
 install(FILES library.h
         DESTINATION include
 )
-
-add_executable(wav_file_analyzer library.cpp
-        library.h)

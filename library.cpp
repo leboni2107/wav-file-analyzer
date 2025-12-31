@@ -5,10 +5,11 @@
 
 using namespace std;
 
-void memcopy(char* dest, const char* src, int size, int offset) {
+int memcopy(char* dest, const char* src, int size, int offset) {
     for (int i = offset; i < size+offset; i++) {
         dest[i-offset] = src[i];
     }
+    return 0;
 }
 
 Header formatHeader(char buffer[]) {
@@ -44,6 +45,7 @@ int output(Header header) {
     cout << "| BPS:           " << header.bps << endl;
     cout << "| Data:          " << header.data << endl;
     cout << "| Data size:     " << header.dsize << endl;
+    return 0;
 }
 
 Header parse(string path) {

@@ -40,4 +40,4 @@ struct Header {         // Byte
  */
 Header parse(std::string path);
 
-#endif //WAV_FILE_ANALYZER_LIBRARY_H
+#endif //WAV-FILE-ANALYZER_LIBRARY_H
