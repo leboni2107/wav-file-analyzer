@@ -1,3 +1,15 @@
+# wav-file-analyzer
+
+Parses .wav file headers into a structure
+
+| Function | Description | Parameters |
+| ----------- | ----------- | ----------- |
+| parse | parses a .wav file into a Header struct | string path: path to the .wav file to be parsed |
+| output | Prints a Header struct | Header header: Header to be printed |
+| initializeHeader | Initializes fields riff, wave, fmt, data | |
+
+
+
 | Struct Header | Byte | Example Value | Description |
 | ----------- | ----------- | ----------- |  ----------- |
 | riff | 1-4 | "RIFF" | Marks the file as a riff file. Characters are each 1 byte long. |
@@ -13,10 +25,3 @@
 | bps | 35-36 | 16 | Bits per sample |
 | data | 37-40 | "data" | "data" chunk header. Marks the beginning of the data section. |
 | dsize | 41-44 | File size (data) | Size of the data section. |
-
-
-| Function | Description | Parameters |
-| ----------- | ----------- | ----------- |
-| parse | parses a .wav file into a Header struct | string path: path to the .wav file to be parsed |
-| output | Prints a Header struct | Header header: Header to be printed |
-| initializeHeader | Initializes fields riff, wave, fmt, data | |
