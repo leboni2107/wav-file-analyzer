@@ -48,6 +48,26 @@ int output(Header header) {
     return 0;
 }
 
+Header initializeHeader() {
+    Header header;
+
+    memcpy(header.riff, "RIFF", 4);
+    header.riff[4] = '\0';
+
+    memcpy(header.wave, "WAVE", 4);
+    header.wave[4] = '\0';
+
+    memcpy(header.fmt, "fmt ", 4);
+    header.fmt[4] = '\0';
+    header.fmtlength = 16; // PCM format length
+    header.type = 1; // PCM = 1 (uncompressed)
+
+    memcpy(header.data, "data", 4);
+    header.data[4] = '\0';
+
+    return header;
+}
+
 Header parse(string path) {
     ifstream file;
     char buffer[44];
@@ -61,7 +81,6 @@ Header parse(string path) {
         file.close();
 
         header = formatHeader(buffer);
-        output(header);
         return header;
     }
     catch (exception &e) {
